@@ -1,2 +1,3 @@
 # geev_api
-An unofficial api for geev.com
+An unofficial api for geev.com/fr
+
