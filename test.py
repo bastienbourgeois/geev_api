@@ -1,7 +1,7 @@
 from src.geev import Geev
 
 def main():
-    geev = Geev()
+    geev = Geev('', '')
     geev.getConversation()
 
 if __name__ == "__main__":
