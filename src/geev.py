@@ -31,13 +31,15 @@ class Geev:
         r = self.session.get(CONV_URL, headers=payload).json()
 
     def getObjects(self, page, location, type, distance):
+        obj = []
         url = OBJ_URL + '?page=' + str(page) + '&location=' + location
         url += '&type=' + type + '&distance=' + str(distance)
-        
         r = self.session.get(url)
         soup = BeautifulSoup(r.content, 'html.parser')
-        #soup = soup.find_all("div", class_="mol-items-panel")
         soup = soup.find_all("a", class_="mol-itemCard")
         for s in soup:
-            print (s['href'])
+            if (s['href'][:4] == "/fr/"):
+                obj.append(s['href'])
+                print(s['href'])
+        return obj
         #print(soup)
