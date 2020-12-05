@@ -14,7 +14,7 @@ from src.geev import Geev
 
 geev = Geev('my_email@example.com', 'my_password')
 
-location = getLocationFromAddress('5 Avenue Anatole France Paris')
+location = geev.getLocationFromAddress('5 Avenue Anatole France Paris')
 geev.getObjects(1, location, 5000)
 geev.getObjects(2, location, 5000)
 
